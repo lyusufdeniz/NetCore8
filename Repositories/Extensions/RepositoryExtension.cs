@@ -1,4 +1,4 @@
-﻿using App.Repositories.Product;
+﻿using App.Repositories.Products;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
