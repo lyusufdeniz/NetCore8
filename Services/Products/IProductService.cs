@@ -1,10 +1,9 @@
-﻿using App.Repositories;
-using App.Repositories.Products;
-namespace App.Services.Products
+﻿namespace App.Services.Products
 
 {
     public interface IProductService
     {
-        public Task<ServiceResult<List<Product>>> GetTopPriceProductsAsync(int count);
+        public Task<ServiceResult<List<ProductResponse>>> GetTopPriceProductsAsync(int count);
+        public Task<ServiceResult<CreateProductResponse>> CreateProductAsync(CreateProductRequest request);
     }
 }
