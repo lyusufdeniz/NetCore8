@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using App.Repositories.Product;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System.Runtime.CompilerServices;
 
 namespace App.Repositories.Extensions
 {
@@ -23,6 +23,8 @@ namespace App.Repositories.Extensions
         
 
 );
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             //dönüş tipi void de olabilirdli ama program.csde cagirdiktan sonra builder.Services.AddRepositories(builder.Configuration) diyip sonuna notka koyup devam edilebilir IServiceCollection olunca yani builder.Services.AddRepositories(builder.Configuration).AddXX().AddYY gibi;
             return services;
         }

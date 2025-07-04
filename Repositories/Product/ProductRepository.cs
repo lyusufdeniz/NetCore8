@@ -6,7 +6,7 @@ namespace App.Repositories.Product
     {
         public  Task<List<Product>> GetTopPriceProductsAsync(int count)
         {
-            return  Context.Products.OrderByDescending(x=>x.price).Take(count).ToListAsync();
+            return  Context.Products.OrderByDescending(x=>x.Price).Take(count).ToListAsync();
         }
     }
 }
